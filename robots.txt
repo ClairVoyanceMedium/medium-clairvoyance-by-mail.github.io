@@ -1,42 +1,23 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
 User-agent: *
-Disallow: /admin/
-Disallow: /tmp/
-Disallow: /private/
+Allow: /              # Autorise l'exploration de toutes les pages
+Disallow: /private/   # Bloque l'accès aux répertoires sensibles
+Disallow: /admin/     # Bloque l'accès aux pages d'administration
+Disallow: /tmp/       # Bloque l'accès aux fichiers temporaires
+Disallow: /logs/      # Bloque l'accès aux fichiers de logs
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
+# Bloque l'accès aux fichiers spécifiques
+Disallow: /*.php$     # Bloque les fichiers PHP
+Disallow: /*.js$      # Bloque les fichiers JavaScript
+Disallow: /*.css$     # Bloque les fichiers CSS
 
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
-Allow: /images/
-
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
-
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
-
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
+# Paramètres supplémentaires pour les robots spécifiques
 User-agent: Googlebot
-Allow: /
-User-agent: AdsBot-Google
-Allow: /
+Allow: /              # Autorise Googlebot à explorer toutes les pages
+Disallow: /private/   # Bloque l'accès aux répertoires sensibles pour Googlebot
+
 User-agent: Bingbot
-Allow: /
+Allow: /              # Autorise Bingbot à explorer toutes les pages
+Disallow: /admin/     # Bloque l'accès aux pages d'administration pour Bingbot
 
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
-Disallow: /
-User-agent: EvilScraper
-Disallow: /
-
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
+# Sitemap
+Sitemap: https://clairvoyancemedium.github.io/medium-clairvoyance-by-mail.github.io/sitemap.xml
