@@ -1,21 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Voyancepartelephonepaschere.github.io/</loc>
-        <lastmod>2024-12-09</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Voyancepartelephonepaschere.github.io/tarifs</loc>
-        <lastmod>2024-12-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Voyancepartelephonepaschere.github.io/contact</loc>
-        <lastmod>2024-12-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-</urlset>
+User-agent: *
+Allow: /              # Autorise l'exploration de toutes les pages
+Disallow: /private/   # Bloque l'accès aux répertoires sensibles
+Disallow: /admin/     # Bloque l'accès aux pages d'administration
+Disallow: /tmp/       # Bloque l'accès aux fichiers temporaires
+Disallow: /logs/      # Bloque l'accès aux fichiers de logs
+
+# Bloque l'accès aux fichiers spécifiques
+Disallow: /*.php$     # Bloque les fichiers PHP
+Disallow: /*.js$      # Bloque les fichiers JavaScript
+Disallow: /*.css$     # Bloque les fichiers CSS
+
+# Paramètres supplémentaires pour les robots spécifiques
+User-agent: Googlebot
+Allow: /              # Autorise Googlebot à explorer toutes les pages
+Disallow: /private/   # Bloque l'accès aux répertoires sensibles pour Googlebot
+
+User-agent: Bingbot
+Allow: /              # Autorise Bingbot à explorer toutes les pages
+Disallow: /admin/     # Bloque l'accès aux pages d'administration pour Bingbot
+
+# Sitemap
+Sitemap: https://clairvoyancemedium.github.io/medium-clairvoyance-by-mail.github.io/sitemap.xml
